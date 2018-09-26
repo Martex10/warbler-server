@@ -9,7 +9,8 @@ const authRoutes = require("./routes/auth");
 const messagesRoutes = require("./routes/messages");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const db = require("./models");
-const PORT = process.env.PORT || 8081;
+
+app.set('port', (process.env.PORT || 8081));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -46,6 +47,6 @@ app.use(function(req, res, next){
 // makes all the errors look the same for the front end
 app.use(errorHandler);
 
-app.listen(PORT, function(){
-    console.log(`Server is starting on port ${PORT}`)
+app.listen(app.get('port'), function(){
+    console.log(`Server is starting on port`, app.get('port'));
 });
