@@ -1,5 +1,5 @@
 {
     "name": "Warbler App",
-    "description": "This app is a twitter clone"
-
+    "description": "This app is a twitter clone",
+    "success_url": "/"
 }
