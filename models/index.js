@@ -7,7 +7,7 @@ mongoose.set("debug", true);
 //we will be useing ES2015 async functions
 mongoose.Promise = Promise;
 //conect to a data base
-mongoose.connect(process.env.MONGOLAB_SILVER_URI || "mongodb://localhost/warbler", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/warbler", {
     keepAlive: true,
     useNewUrlParser: true
 });
