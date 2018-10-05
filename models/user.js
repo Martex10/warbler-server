@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 //library used for hashing the user password and 
 //turning it into something that can not be reversed. 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema({
     email: {

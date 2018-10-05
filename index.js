@@ -7,10 +7,12 @@ const bodyParser = require('body-parser');
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const messagesRoutes = require("./routes/messages");
+const mongoose = require("mongoose");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const db = require("./models");
 
 app.set('port', (process.env.PORT || 8081));
+mongoose.set('useFindAndModify', false);
 
 app.use(cors());
 app.use(bodyParser.json());
